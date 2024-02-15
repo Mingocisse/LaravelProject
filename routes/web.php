@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -14,18 +15,20 @@ use App\Models\Listing;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Common Resources Routes:
+//index - show all listings
+//show- show single listing
+//create- show form to create a new listing
+//store - Store new listing
+//edit- show form to edit a listing
+//update- show form to update a listing
+//destroy - delete a listing
+
+
 //All listing 
 
-Route::get('/', function () {
-    return view('listings',  [
-        'heading'=>'Latest Listing',
-        'listings'=> Listing::all(),
-    ]);
-    });
+Route::get('/',[ListingController::class, 'index'] );
 
 //Single listing
-Route::get('/listings/{id}', function($id){
-    return view('listing', [
-        'listing' => Listing::find($id)
-    ]);
-});
+Route::get('/listings/{listing}',[ListingController::class, 'show']);
