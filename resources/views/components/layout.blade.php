@@ -34,7 +34,7 @@
         <span class="font-bold uppercase">
         </span>
       </li>
-      <li>
+      {{-- <li>
         <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Research</a>
       </li>
       <li>
@@ -44,7 +44,7 @@
             <i class="fa-solid fa-door-closed"></i> Logout
           </button>
         </form>
-      </li>
+      </li> --}}
 
       <li>
         <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
@@ -65,6 +65,8 @@
 
     <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
   </footer>
+
+  <x-flash-message />
 </body>
 
 </html>
